@@ -1,0 +1,88 @@
+body {
+  font-size: 16px;
+  font-family: roboto;
+  background-color: hsl(30, 14%, 95%);
+}
+
+img {
+  cursor: pointer;
+  width: clamp(80px, 20vw, 180px);
+  border: clamp(1px, 0.3vw, 2px) solid #0d0d0d;
+  background-color: #fff;
+  border-radius: 0.2rem;
+}
+
+p {
+  /*position: absolute;
+  top: 0;
+  right: 0;*/
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  margin-top: clamp(24px, 3vw, 56px);
+  font-weight: 300;
+  color: #0d0d0d;
+  font-size: clamp(16px, 2vw, 56px);
+}
+
+#score {
+  font-size: clamp(18px, 3vw, 72px);
+  color: #ff8e3c;
+  padding-left: 0.5rem;
+  font-weight: 900;
+}
+
+.gameContainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: clamp(0.5rem, 1.5vw, 2rem);
+  margin: clamp(1rem, 5vw, 5rem);
+  margin-top: clamp(24px, 3.5vw, 56px);
+  justify-content: center;
+}
+
+.selected {
+  outline: 10px solid #0d0d0d;
+  outline-offset: -10px;
+  background-color: #fff;
+}
+
+.matched {
+  outline: 10px solid #ff8e3c;
+  animation: blink-fade 2.5s ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 250ms;
+  opacity: 1;
+}
+
+@keyframes blink-fade {
+  0%,
+  20%,
+  40% {
+    opacity: 1;
+  }
+  10%,
+  30%,
+  49% {
+    opacity: 0;
+  }
+  60% {
+    opacity: 1;
+  }
+  98% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* Apply the animation to the element */
+
+/* * 
+See all the boxes
+{
+  outline: 1px solid red !important;
+} */
