@@ -31,6 +31,7 @@ p {
   color: #ff8e3c;
   padding-left: 0.5rem;
   font-weight: 900;
+  outline: 0px solid #0d0d0d;
 }
 
 .gameContainer {
@@ -44,14 +45,25 @@ p {
 }
 
 .selected {
-  outline: 10px solid #0d0d0d;
-  outline-offset: -10px;
   background-color: #fff;
+  animation: grow 0.3s cubic-bezier(0.59, 0.58, 0, 1.01);
+  animation-fill-mode: forwards;
+}
+@keyframes grow {
+  0% {
+    outline: 0px solid #0d0d0d;
+    outline-offset: 0px;
+  }
+  100% {
+    outline: clamp(5px, 0.5vw, 10px) solid #0d0d0d;
+    outline-offset: clamp(-5px, -0.2vw, -10px);
+  }
 }
 
 .matched {
-  outline: 10px solid #ff8e3c;
-  animation: blink-fade 2.5s cubic-bezier(0.79, 0, 0.15, 1);
+  outline: clamp(5px, 0.5vw, 10px) solid #ff8e3c;
+  outline-offset: clamp(-5px, -0.2vw, -10px);
+  animation: blink-fade 3s cubic-bezier(0.79, 0, 0.15, 1);
   animation-fill-mode: forwards;
   animation-delay: 100ms;
   opacity: 1;
@@ -62,7 +74,7 @@ p {
   10%,
   20% {
     opacity: 1;
-    scale: 1.1;
+    scale: 1.04;
   }
   5%,
   15%,

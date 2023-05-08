@@ -93,12 +93,23 @@ function handleImageClick(event) {
     // If the image is already selected, deselect it
     clickedImage.classList.remove("selected");
     selectedImages = selectedImages.filter((image) => image !== clickedImage);
+
+    //play the sound cancel.wav when an image is deselected
+    const cancelSound = new Audio("sounds/cancel.wav");
+    cancelSound.play();
   } else {
     // If the image is not selected, select it and add it to the selectedImages array
+
     clickedImage.classList.add("selected");
     selectedImages.push(clickedImage);
     // Play the sound that matches the name of the selected word
     // playSound(clickedImage.alt);
+
+    //play the sound grow.wav selectedImeges.length is 1
+    if (selectedImages.length === 1) {
+      const growSound = new Audio("sounds/grow.wav");
+      growSound.play();
+    }
   }
 
   if (selectedImages.length === 2) {
@@ -108,6 +119,11 @@ function handleImageClick(event) {
       score++;
       image1.classList.add("matched");
       image2.classList.add("matched");
+      //also add the class to id score to make it shake and remove it after 2 seconds
+      document.getElementById("score").classList.add("matched");
+      setTimeout(function () {
+        document.getElementById("score").classList.remove("matched");
+      }, 1200);
 
       //play success sound when a match is found
       const successSound = new Audio("sounds/success.mp3");
