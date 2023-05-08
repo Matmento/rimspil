@@ -51,7 +51,7 @@ p {
 
 .matched {
   outline: 10px solid #ff8e3c;
-  animation: blink-fade 3s ease-in-out;
+  animation: blink-fade 2.5s cubic-bezier(0.79, 0, 0.15, 1);
   animation-fill-mode: forwards;
   animation-delay: 100ms;
   opacity: 1;
