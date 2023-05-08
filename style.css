@@ -6,7 +6,7 @@ body {
 
 img {
   cursor: pointer;
-  width: clamp(130px, 20vw, 180px);
+  width: clamp(110px, 20vw, 180px);
   border: clamp(1px, 0.3vw, 2px) solid #0d0d0d;
   background-color: #fff;
   border-radius: 0.2rem;
@@ -38,8 +38,8 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   gap: clamp(0.5rem, 1.5vw, 2rem);
-  margin: clamp(1rem, 5vw, 5rem);
-  margin-top: clamp(24px, 3.5vw, 56px);
+  margin: clamp(0.5rem, 5vw, 5rem);
+  /* margin-top: clamp(24px, 3.5vw, 56px); */
   justify-content: center;
 }
 
