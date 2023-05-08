@@ -6,7 +6,7 @@ body {
 
 img {
   cursor: pointer;
-  width: clamp(120px, 20vw, 180px);
+  width: clamp(130px, 20vw, 180px);
   border: clamp(1px, 0.3vw, 2px) solid #0d0d0d;
   background-color: #fff;
   border-radius: 0.2rem;
