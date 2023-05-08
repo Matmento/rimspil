@@ -98,7 +98,7 @@ function handleImageClick(event) {
     clickedImage.classList.add("selected");
     selectedImages.push(clickedImage);
     // Play the sound that matches the name of the selected word
-    playSound(clickedImage.alt);
+    // playSound(clickedImage.alt);
   }
 
   if (selectedImages.length === 2) {
@@ -120,6 +120,14 @@ function handleImageClick(event) {
       // If the selected images do not form a rhyming pair, remove the "selected" class from both images
       image1.classList.remove("selected");
       image2.classList.remove("selected");
+      //  add and remove a class to make the images shake when a match is not found
+      image1.classList.add("shake");
+      image2.classList.add("shake");
+      setTimeout(function () {
+        image1.classList.remove("shake");
+        image2.classList.remove("shake");
+      }, 1000);
+
       //play failure sound when a match is not found
       const failureSound = new Audio("sounds/failure.mp3");
       failureSound.play();
